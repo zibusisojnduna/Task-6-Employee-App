@@ -1,6 +1,8 @@
 function Form(){
     const submit = () => {
-        document.getElementById("overlay-1").style.display = "block"
+        // document.getElementById("overlay-1").style.display="block"
+        alert("Thsnk you for registering. Your details have been saved.")
+        
     }
 
     return(

@@ -15,13 +15,16 @@ import Twitter from '../components/twitter'
 import Youtube from '../components/Youtube'
 import Message from '../components/submit msg'
 import Ok from '../components/ok'
-
+import Overlay1 from '../components/oberlay 1'
+import Employee from '../components/edit list'
 
 
 
 function App() {
   const [count, setCount] = useState(0)
     
+  
+
   
   return (
     <>
@@ -47,10 +50,16 @@ function App() {
       </section>
 
       <section className='section-2'>
-         <div id='overlay-1'>
-          <Message></Message>
-          <Ok></Ok>
+         
+         <div>
+          <Employee></Employee>
          </div>
+         
+          
+       
+     
+          
+         
 
 
 
