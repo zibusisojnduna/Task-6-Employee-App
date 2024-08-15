@@ -47,7 +47,7 @@ function Form(){
             </select><br></br>
 
             <label>I.D Number</label><br></br>
-            <input type="text" placeholder="I.D Number"className="entry"></input><br></br>
+            <input type="text" placeholder="I.D Number"className="entry" value={inputs.id} onChange={handleChange}></input><br></br>
             <br></br>
             <button onClick={submit} className="submit">Submit</button>
 
