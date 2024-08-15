@@ -13,6 +13,7 @@ ul {
   background-color: #F94F38;
   width: 100vw;
   text-align: center;
+  position: fixed;
 }
 
 li {

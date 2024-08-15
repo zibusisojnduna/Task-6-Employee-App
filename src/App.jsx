@@ -18,15 +18,42 @@ import Ok from '../components/ok'
 import Overlay1 from '../components/oberlay 1'
 import Employee from '../components/edit list'
 
+ const employeeData = [
+    {firstName: "David", lastName: "Hughes", email: "davidhughes@gmail.com", number: "064 870 7457", position: "Tester", id: "9403056749081", image: "./src/assets/diego-hernandez-MSepzbKFz10-unsplash.jpg"},
+    {firstName: "Mei", lastName: "Beifong", email: "mbeifong@gmail.com", number: "082 674 1239", position: "Junior Animator", id: "99120143218091", image: "./src/assets/aiony-haust-ITXtNqvfdOw-unsplash.jpg"},
+    {firstName: "Kenneth", lastName: "Okiri", email: "okiri892gmail.com", number: "073 123 7651", position: "Senior Graphics Programmer", id: "8908017864081", image: "./src/assets/roland-cousins-3GTHyh2lo9o-unsplash.jpg"},
+    {firstName: "Hector", lastName: "Alvarez", email: "hectoralvaroalvarez@gmail.com", number: "082 563 8876", position: "Senior Animator", id: "9607248765431", image: "./src/assets/albert-dera-ILip77SbmOE-unsplash.jpg"},
+    {firstName: "Samuel", lastName: "Patel", email: "SPatel@gmail.com", number: "063 987 4321", position: "Senior Audio Programmer", id: "9101032334081", image: "./src/assets/slava-jamm-8fyRSkyI6pQ-unsplash.jpg"},
+  ]
+
+const App = () => {
+  const [filteredList, setFilteredList] = useState(employeeData);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (event) => {
+    const query = event.target.value;
+
+    if(!query){
+      setFilteredList(employeeData)
+      setSearchQuery(query);
+      return
+    }
 
 
-function App() {
-  const [count, setCount] = useState(0)
-    
-  
+    setSearchQuery(query);
 
-  
-  return (
+    const searchList = filteredList.filter((item) => {
+      return item.name.toLowerCase().indexOf(query/toLowerCase()) !== -1;
+
+    });
+
+    setFilteredList(searchList)
+  };
+
+  const onFilterChange = (event) => {};
+
+
+   return (
     <>
       <div className='nav'>
         <Navigation></Navigation>
@@ -36,7 +63,8 @@ function App() {
 
         <div className='half-1'>
           <Heading></Heading>
-          <Search></Search>
+          <input type="text" className="searchbar" placeholder="Search Employee I.D Number" onChange={handleSearch} value={searchQuery}></input>
+          <Employee></Employee>
           
         </div>
           
@@ -52,11 +80,14 @@ function App() {
       <section className='section-2'>
          
          <div>
-          <Employee></Employee>
+           {/* {filteredList.map((item, index) => {
+          return(
+              <Employee></Employee>
+          )
+         }} */}
          </div>
-         
-          
-       
+
+        
      
           
          
@@ -83,5 +114,11 @@ function App() {
     </>
   )
 }
+  
+
+ 
+  
+ 
+
 
 export default App

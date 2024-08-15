@@ -1,30 +1,41 @@
 function Form(){
-    const submit = () => {
-        // document.getElementById("overlay-1").style.display="block"
-        alert("Thsnk you for registering. Your details have been saved.")
-        
+
+    const [inputs, setInputs ] = useState({}) 
+     
+    const handleChange = (event) => {
+        const firstName = event.target.firstName
+        const lastName = event.target.lastName
+        const email = event.target.email
+        const number = event.target.number
+        const image= event.target.image
+        const position = event.target.position
+        const id = event.target.id
+        setInputs(values =>({...values,[firstName]:lastName, email, number, image, position, id}))
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert("Thank you for registering. Your details have been saved.")
+    }
     return(
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
             <label>First Name</label><br></br>
-            <input type="text" placeholder="First Name" className="entry"></input><br></br>
+            <input type="text" placeholder="First Name" className="entry" value={inputs.firstName} onChange={handleChange}></input><br></br>
 
             <label>Surname</label><br></br>
-            <input type="text" placeholder="Surname" className="entry"></input><br></br>
+            <input type="text" placeholder="Surname" className="entry" value={inputs.lastName} onChange={handleChange}></input><br></br>
 
             <label>Email Address</label><br></br>
-            <input type="email" placeholder="Email Address" className="entry"></input><br></br>
+            <input type="email" placeholder="Email Address" className="entry" value={inputs.email} onChange={handleChange}></input><br></br>
 
             <label>Phone Number</label><br></br>
-            <input type="text" placeholder="Phone Number" className="entry"></input><br></br>
+            <input type="text" placeholder="Phone Number" className="entry" value={inputs.number} onChange={handleChange}></input><br></br>
 
             <label>Upload an Image</label><br></br>
-            <iframe src=""
-frameborder="0" width="10" height="30"></iframe><br></br>
+      <br></br>
 
             <label>Please Select your Position</label><br></br>
-            <select className="entry">
+            <select className="entry" value={inputs.position} onChange={handleChange}>
                 <option></option>
                 <option>Senior Graphics Programmer</option>
                 <option>Junior Gragphics Programmer</option>
