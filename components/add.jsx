@@ -1,5 +1,7 @@
 function Add(){
     let emp = JSON.parse(localStorage.getItem("employeeData"))
 
-    emp
+    emp.push()
+
+   localStorage.setItem  
 }

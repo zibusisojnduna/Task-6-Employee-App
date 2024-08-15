@@ -70,7 +70,7 @@ const App = () => {
           
         <div>
           <Heading2></Heading2>
-          <Form></Form>
+          <Form/>
         </div>
 
        
