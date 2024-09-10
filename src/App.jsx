@@ -27,31 +27,7 @@ import Employee from '../components/edit list'
   ]
 
 const App = () => {
-  const [filteredList, setFilteredList] = useState(employeeData);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = (event) => {
-    const query = event.target.value;
-
-    if(!query){
-      setFilteredList(employeeData)
-      setSearchQuery(query);
-      return
-    }
-
-
-    setSearchQuery(query);
-
-    const searchList = filteredList.filter((item) => {
-      return item.name.toLowerCase().indexOf(query/toLowerCase()) !== -1;
-
-    });
-
-    setFilteredList(searchList)
-  };
-
-  const onFilterChange = (event) => {};
-
+ 
 
    return (
     <>
@@ -63,7 +39,7 @@ const App = () => {
 
         <div className='half-1'>
           <Heading></Heading>
-          <input type="text" className="searchbar" placeholder="Search Employee I.D Number" onChange={handleSearch} value={searchQuery}></input>
+          <Search employee={employeeData}/>
           <Employee></Employee>
           
         </div>

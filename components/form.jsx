@@ -1,3 +1,5 @@
+import React from "react"
+import { useState } from "react"
 function Form(){
 
     const [inputs, setInputs ] = useState({}) 
@@ -49,7 +51,7 @@ function Form(){
             <label>I.D Number</label><br></br>
             <input type="text" placeholder="I.D Number"className="entry" value={inputs.id} onChange={handleChange}></input><br></br>
             <br></br>
-            <button onClick={submit} className="submit">Submit</button>
+            <button onClick={handleSubmit} className="submit">Submit</button>
 
         </form>
     )
