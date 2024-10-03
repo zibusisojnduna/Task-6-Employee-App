@@ -4,19 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navigation from '../components/nav'
 import Logo from '../components/logo'
-import Heading from '../components/heading 1'
-import Search from '../components/searchbar'
-import Heading2 from '../components/heading 2'
-import Form from '../components/form'
 import Text from '../components/text'
 import Instagram from '../components/instagram'
 import Twitch from '../components/twitch'
 import Twitter from '../components/twitter'
 import Youtube from '../components/Youtube'
-import Message from '../components/submit msg'
-import Ok from '../components/ok'
-import Overlay1 from '../components/oberlay 1'
-import Employee from '../components/edit list'
+import EmployeeManager from '../components/employeeManager'
 
  const employeeData = [
     {firstName: "David", lastName: "Hughes", email: "davidhughes@gmail.com", number: "064 870 7457", position: "Tester", id: "9403056749081", image: "./src/assets/diego-hernandez-MSepzbKFz10-unsplash.jpg"},
@@ -38,15 +31,12 @@ const App = () => {
       <section className='section-1'>
 
         <div className='half-1'>
-          <Heading></Heading>
-          <Search employee={employeeData}/>
-          <Employee></Employee>
+         
           
         </div>
           
         <div>
-          <Heading2></Heading2>
-          <Form/>
+          <EmployeeManager/>
         </div>
 
        
