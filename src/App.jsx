@@ -2,14 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import AddEmployee from '../components/addEmployee'
 import Navigation from '../components/nav'
-import Logo from '../components/logo'
-import Text from '../components/text'
-import Instagram from '../components/instagram'
-import Twitch from '../components/twitch'
-import Twitter from '../components/twitter'
-import Youtube from '../components/Youtube'
-import EmployeeManager from '../components/employeeManager'
+import ReadEmployee from '../components/readEmployeeInfo'
 import Search from '../components/searchbar'
 
  const employeeData = [
@@ -25,57 +20,25 @@ const App = () => {
 
    return (
     <>
-      <div className='nav'>
-        <Navigation></Navigation>
+     <section style={{display:"flex"}}>
+      <Navigation/>
+     </section>
+
+<section style={{display:"flex"}}>
+   <div style={{textAlign:"center"}}>
+      <AddEmployee/>
+     </div>
+
+     <div style={{margin:"2%", textAlign:"center"}}>
+      <Search/>
+     </div>
+</section>
+
+<section>
+  <ReadEmployee/>
+</section>
+    
        
-      </div>
-
-      <section className='section-1'>
-
-        <div className='half-1'>
-         
-          
-        </div>
-          
-        <div>
-        
-          <EmployeeManager/>
-        </div>
-
-       
-
-      </section>
-
-      <section className='section-2'>
-         
-         <div>
-         
-         </div>
-
-        
-     
-          
-         
-
-
-
-
-         
-      </section>
-
-      
-       <section className='section-3'>
-        <div className='footer'>
-          <Logo></Logo>
-          <Text></Text>
-          <Instagram></Instagram><br></br>
-          <Twitch></Twitch><br></br>
-          <Twitter></Twitter><br></br>
-          <Youtube></Youtube><br></br>
-
-
-        </div>
-       </section>
     </>
   )
 }
