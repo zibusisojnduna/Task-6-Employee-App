@@ -10,6 +10,7 @@ import Twitch from '../components/twitch'
 import Twitter from '../components/twitter'
 import Youtube from '../components/Youtube'
 import EmployeeManager from '../components/employeeManager'
+import Search from '../components/searchbar'
 
  const employeeData = [
     {firstName: "David", lastName: "Hughes", email: "davidhughes@gmail.com", number: "064 870 7457", position: "Tester", id: "9403056749081", image: "./src/assets/diego-hernandez-MSepzbKFz10-unsplash.jpg"},
@@ -26,6 +27,7 @@ const App = () => {
     <>
       <div className='nav'>
         <Navigation></Navigation>
+       
       </div>
 
       <section className='section-1'>
@@ -36,6 +38,7 @@ const App = () => {
         </div>
           
         <div>
+        
           <EmployeeManager/>
         </div>
 
@@ -46,11 +49,7 @@ const App = () => {
       <section className='section-2'>
          
          <div>
-           {/* {filteredList.map((item, index) => {
-          return(
-              <Employee></Employee>
-          )
-         }} */}
+         
          </div>
 
         

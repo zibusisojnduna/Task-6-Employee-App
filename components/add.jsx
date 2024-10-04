@@ -36,7 +36,7 @@ const handleSubmit = (e) =>{
 }
 
 return(
-    <form className="form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit} style={{padding:"2%"}}>
     <label>First Name</label><br></br>
     <input type="text" placeholder="First Name" className="entry" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input><br></br>
 
@@ -67,7 +67,7 @@ return(
     <label>I.D Number</label><br></br>
     <input type="text" placeholder="I.D Number"className="entry" value={id} onChange={(e) => setId(e.target.value)}></input><br></br>
     <br></br>
-    <button>{initialData ? "Update Employee " : "Add Employee"}</button>
+    <button>{initialData ? "Add Employee " : "Update Employee"}</button>
 
 </form>
 )

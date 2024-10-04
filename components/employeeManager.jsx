@@ -45,7 +45,7 @@ const handleUpdateEmployee = (updatedEmployee) => {
 const currentEmployee = employees.find(employee => employee.id === editingId)
 
 return(
-    <div>
+    <div style={{marginTop:"16%"}}>
         <h2>Employee Manager</h2>
         <Add onSubmit={editingId ? handleUpdateEmployee:handleAddEmployees} initialData={currentEmployee}/>
         <h3>Employee List</h3>
